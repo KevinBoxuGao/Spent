@@ -1,0 +1,19 @@
+* {
+	  padding: 0;
+    margin: 0;
+    transition: 0.2s;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    background: none;
+    border: none;
+}
