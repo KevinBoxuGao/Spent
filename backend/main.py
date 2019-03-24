@@ -72,7 +72,7 @@ def renderTransactions(data):
             </tr>
           </thead>\n\n"""
     for transaction in data:
-        html += '<tr><td class="ttext">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])-14400))+'</td>\n<td class="ttext">'+str(transaction[1])+'</td>\n<td class="ttext">$'+str(transaction[0])+'</td></tr>\n\n\n'
+        html += '<tr><td class="ttext">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])-14400))+'</td>\n<td class="ttext">'+str(transaction[1])+'</td>\n<td class="ttext">$'+str(round(transaction[0], 2))+'</td></tr>\n\n\n'
     return html
 
 @app.route('/accountdata', methods=['GET'])
