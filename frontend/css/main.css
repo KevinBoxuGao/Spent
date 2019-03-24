@@ -1,8 +1,8 @@
-*{padding:0;margin:0;transition:0.2s}html,body{height:100%;width:100%;background:#edfff3}html{scroll-behavior:smooth}button{background:none;border:none}body{font-family:Lato,sans-serif;font-weight:400;color:black}p{font-family:Lato,sans-serif;margin-bottom:1.25em}h1,h2,h3,h4,h5{font-family:Lato,sans-serif;font-weight:400;color:black}h1{font-size:36px}h2{font-size:24px}h3{font-size:18px}h4{font-size:1.563em}h5{font-size:1.25em}.hide-text{overflow:hidden;padding:0;text-indent:101%;white-space:nowrap}.visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.dropbutton{cursor:pointer}.dropbutton:hover{color:#808080}.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);padding:12px 16px;z-index:1}.dropdown-content a{color:black;padding:12px 16px;text-decoration:none;display:block}.dropdown-content a:hover{background-color:#f1f1f1}.expand{display:block}.amount-change{margin-top:24px;margin-left:auto;margin-right:auto;text-align:center}.amount-change .saying{color:black;padding-right:8px;font-size:36px;display:inline}.amount-change button i{font-size:30px}.amount-total{color:black;font-size:64px;text-align:center;margin-bottom:36px}table{border-radius:4px}table thead tr:nth-child(even){background-color:#cdf8b2}table thead tr:nth-child(odd){background-color:white}
+*{padding:0;margin:0;transition:0.2s}html,body{height:100%;width:100%;background:#ffffff}html{scroll-behavior:smooth}button{background:none;border:none}body{font-family:Lato,sans-serif;font-weight:400;color:black}p{font-family:Lato,sans-serif;margin-bottom:1.25em}h1,h2,h3,h4,h5{font-family:Lato,sans-serif;font-weight:400;}h1{font-size:36px}h2{font-size:24px}h3{font-size:18px}h4{font-size:1.563em}h5{font-size:1.25em}.hide-text{overflow:hidden;padding:0;text-indent:101%;white-space:nowrap}.visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.dropbutton{cursor:pointer}.dropbutton:hover{color:#808080}.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;background-color:#f9f9f9;min-width:160px;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);padding:12px 16px;z-index:1}.dropdown-content a{color:black;padding:12px 16px;text-decoration:none;display:block}.dropdown-content a:hover{background-color:#f1f1f1}.expand{display:block}.amount-change{margin-top:24px;margin-left:auto;margin-right:auto;text-align:center}.amount-change .saying{color:black;padding-right:8px;font-size:36px;display:inline}.amount-change button i{font-size:30px}.amount-total{color:black;font-size:64px;text-align:center;margin-bottom:36px}table{border-radius:4px}table thead tr:nth-child(even){background-color:#cdf8b2}table thead tr:nth-child(odd){background-color:white}
     .header {
       top: 0;
-      background: #7af99a;
-      color: #0c2e40;
+      background: #000000;
+      color: white;
       width:100%;
     }
 #loginbox {
@@ -86,7 +86,7 @@ img {vertical-align: middle;}
   border-width: 2px;
   border-radius: 8px;
   border-color: #f2fff5;
-  background: rgba(221, 255, 230, 0.5);
+  background: rgba(242, 242, 242, 0.5);
   
 }
 .tbox {
@@ -103,6 +103,9 @@ img {vertical-align: middle;}
   min-height: 100vh;
   background:#fcfffd
   
+}
+.ttext {
+  padding: 10px;
 }
 .headl {
   color: #0c2e40;

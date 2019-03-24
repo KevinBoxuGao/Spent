@@ -66,13 +66,13 @@ def renderTransactions(data):
     data.reverse()
     html = """<thead>
             <tr>
-              <td class="date">Date</td>
-              <td class="description">Description</td>
-              <td class="amount">Amount</td> 
+              <td class="ttext"><h3>Date</h3></td>
+              <td class="ttext"><h3>Description</h3></td>
+              <td class="ttext"><h3>Amount</h3></td> 
             </tr>
           </thead>\n\n"""
     for transaction in data:
-        html += '<tr><td class="date">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])))+'</td>\n<td class="description">'+str(transaction[1])+'</td>\n<td class="amount">$'+str(transaction[0])+'</td></tr>\n\n\n'
+        html += '<tr><td class="ttext">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])-14400))+'</td>\n<td class="ttext">'+str(transaction[1])+'</td>\n<td class="ttext">$'+str(transaction[0])+'</td></tr>\n\n\n'
     return html
 
 @app.route('/accountdata', methods=['GET'])
