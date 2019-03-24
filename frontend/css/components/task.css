@@ -1,0 +1,32 @@
+.task {
+  width: 99.5%;
+  margin: 0.25%;
+  height: 104px;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+}
+
+.task .content {
+  position: relative;
+  left: 24px;
+  top: 40px;
+}
+
+.task .content .button {
+  display: inline;
+}
+
+.task .content .button .check-box {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+}
+
+.task .content .name {
+  display: inline;
+  margin-left: 16px;
+  position: absolute;
+  left: 64px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
