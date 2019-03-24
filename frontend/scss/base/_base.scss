@@ -1,7 +1,10 @@
+@import '../abstracts/variables';
+
 * {
-	  padding: 0;
+	padding: 10px;
     margin: 0;
     transition: 0.2s;
+    font-family: $default-font;
 }
 
 html, body {
