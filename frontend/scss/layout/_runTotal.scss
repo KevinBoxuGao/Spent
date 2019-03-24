@@ -1,21 +1,21 @@
 @import "../abstracts/mixins";
+@import '../abstracts/variables';
 
-.saying{
+.saying {
     color: black;
-    background: $hover-secondary;
     height: 20px;
-    font-size: 15px;
-    margin: 0px, 8px;
-    padding: 6px 10px; 
+    margin: 6px;
+    padding: 6px;
 }
 
-.total{
+.total {
     color: black;
-    background: $hover-secondary;
     height: 27px;
     font-size: 28px;
-    margin: 0px, 8px;
-    padding: 6px 10px;
+    margin: 6px;
+    padding: 6px;
 }
 
-
+.amount {
+    font-weight: bold;
+}

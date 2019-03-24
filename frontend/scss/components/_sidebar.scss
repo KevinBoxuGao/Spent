@@ -1,0 +1,16 @@
+.sidebar {
+    float: left;
+    position: fixed;
+    height: 100%;
+    width: 220px;
+    background-color: $secondary-color;
+    border: 2px dashed $primary-color;
+    border-radius: 5px;
+    color: white;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    margin-left: 220px;
+}

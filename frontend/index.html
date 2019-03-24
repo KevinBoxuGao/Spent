@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <script src="js/main.js"></script>
   </head>
 
   <body>
+    <div class="sidebar">
+      <h1>Transactions</h1>
+    </div>
     <div class="container">
       <div id="total">
-        <h2 class="saying">You have Spent</h2>
+        <h1 class="saying">You have Spent:</h1>
         <h1 class="amount">$468</h1>
       </div>
       <div id="transactions">
@@ -24,13 +28,19 @@
               <td class="description">Description</td>
               <td class="amount">Amount</td> 
             </tr>
-          <thead>
-          <tr>
-            <td class="date">January 1, 2019</td>
-            <td class="description">Tim Hortons Coffee</td>
-            <td class="amount">$1.49</td> 
-          </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td class="date">January 1, 2019</td>
+              <td class="description">Tim Hortons Coffee</td>
+              <td class="amount">$1.49</td> 
+            </tr>
+            <tr>
+              <td class="date">January 1, 2019</td>
+              <td class="description">Walmart Nintendo Switch</td>
+              <td class="amount">$59.99</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

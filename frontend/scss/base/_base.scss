@@ -1,7 +1,11 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
 * {
-	  padding: 0;
+	padding: 10px;
     margin: 0;
     transition: 0.2s;
+    @include font-face;
 }
 
 html, body {
