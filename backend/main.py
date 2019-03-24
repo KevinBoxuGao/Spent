@@ -112,7 +112,7 @@ def addexpense():
     if len(data) == 0:
         return "Unregistered", 401
     try:
-        val = int(str(json['expense1']).replace('$', ''))
+        val = float(str(json['expense1']).replace('$', ''))
     except:
         return 'Bad Value', 401
 
