@@ -105,7 +105,9 @@ table tbody tr:nth-child(odd) td {
   position: fixed;
   height: 100%;
   width: 220px;
-  background-color: #5cff7f;
+  background-color: #cdf8b2;
+  border: 2px dashed #5cff7f;
+  border-radius: 5px;
   color: white;
   top: 0;
   left: 0;
@@ -118,15 +120,18 @@ table tbody tr:nth-child(odd) td {
 .saying {
   color: black;
   height: 20px;
-  font-size: 15px;
-  margin: 0px, 8px;
-  padding: 6px 10px;
+  margin: 8px;
+  padding: 6px;
 }
 
 .total {
   color: black;
   height: 27px;
   font-size: 28px;
-  margin: 0px, 8px;
-  padding: 6px 10px;
+  margin: 8px;
+  padding: 6px;
+}
+
+.amount {
+  font-weight: bold;
 }
