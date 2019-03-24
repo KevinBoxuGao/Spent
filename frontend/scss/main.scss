@@ -10,10 +10,11 @@
 @import 'base/helpers';
 
 // 3. Components
+@import 'components/table';
+@import 'components/sidebar';
 
 // 4. Layout-related sections
 @import 'layout/runTotal';
-@import 'layout/table';
 
 // 6. Page-specific styles
 @import 'pages/home';

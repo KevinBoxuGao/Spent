@@ -2,7 +2,7 @@
   padding: 10px;
   margin: 0;
   transition: 0.2s;
-  font-family: Lato, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html, body {
@@ -76,24 +76,6 @@ h5 {
   width: 1px;
 }
 
-.saying {
-  color: black;
-  background: #1D69C4;
-  height: 20px;
-  font-size: 15px;
-  margin: 0px, 8px;
-  padding: 6px 10px;
-}
-
-.total {
-  color: black;
-  background: #1D69C4;
-  height: 27px;
-  font-size: 28px;
-  margin: 0px, 8px;
-  padding: 6px 10px;
-}
-
 table thead tr td {
   font-weight: bold;
   background-color: #5cff7f;
@@ -102,17 +84,49 @@ table thead tr td {
 table tbody {
   border-radius: 4px;
   border: 1px solid #cdf8b2;
-  padding: 10px;
 }
 
 table tbody tr:nth-child(even) td {
   background-color: #cdf8b2;
   font-size: 15px;
-  border: 1px solid white;
+  border: 1px solid #d3f9bb;
+  padding: 5px;
 }
 
 table tbody tr:nth-child(odd) td {
   background-color: white;
   font-size: 15px;
   border: 1px solid #cdf8b2;
+  padding: 5px;
+}
+
+.sidebar {
+  float: left;
+  position: fixed;
+  height: 100%;
+  width: 220px;
+  background-color: #5cff7f;
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  margin-left: 220px;
+}
+
+.saying {
+  color: black;
+  height: 20px;
+  font-size: 15px;
+  margin: 0px, 8px;
+  padding: 6px 10px;
+}
+
+.total {
+  color: black;
+  height: 27px;
+  font-size: 28px;
+  margin: 0px, 8px;
+  padding: 6px 10px;
 }
