@@ -75,3 +75,63 @@ h5 {
   position: absolute;
   width: 1px;
 }
+
+table thead tr td {
+  font-weight: bold;
+  background-color: #5cff7f;
+}
+
+table tbody {
+  border-radius: 4px;
+  border: 1px solid #cdf8b2;
+}
+
+table tbody tr:nth-child(even) td {
+  background-color: #cdf8b2;
+  font-size: 15px;
+  border: 1px solid #d3f9bb;
+  padding: 5px;
+}
+
+table tbody tr:nth-child(odd) td {
+  background-color: white;
+  font-size: 15px;
+  border: 1px solid #cdf8b2;
+  padding: 5px;
+}
+
+.sidebar {
+  float: left;
+  position: fixed;
+  height: 100%;
+  width: 220px;
+  background-color: #cdf8b2;
+  border: 2px dashed #5cff7f;
+  border-radius: 5px;
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  margin-left: 220px;
+}
+
+.saying {
+  color: black;
+  height: 20px;
+  margin: 6px;
+  padding: 6px;
+}
+
+.total {
+  color: black;
+  height: 27px;
+  font-size: 28px;
+  margin: 6px;
+  padding: 6px;
+}
+
+.amount {
+  font-weight: bold;
+}
