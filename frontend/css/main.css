@@ -2,7 +2,7 @@
   padding: 10px;
   margin: 0;
   transition: 0.2s;
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", "sans-serif";
 }
 
 html, body {
@@ -120,7 +120,7 @@ table tbody tr:nth-child(odd) td {
 .saying {
   color: black;
   height: 20px;
-  margin: 8px;
+  margin: 6px;
   padding: 6px;
 }
 
@@ -128,7 +128,7 @@ table tbody tr:nth-child(odd) td {
   color: black;
   height: 27px;
   font-size: 28px;
-  margin: 8px;
+  margin: 6px;
   padding: 6px;
 }
 

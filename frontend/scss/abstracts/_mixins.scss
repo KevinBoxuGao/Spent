@@ -17,3 +17,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+@mixin font-face {
+    font-family: "Lato", "sans-serif";
+}
