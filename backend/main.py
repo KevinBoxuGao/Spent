@@ -36,7 +36,7 @@ def query_database(user_id):
     return acDataParsed
 
 def dollar(x):
-    return '$'+str(x)
+    return '$'+str(round(x, 2))
 
 def stats(data):
     daily = 0
