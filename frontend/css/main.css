@@ -128,4 +128,45 @@ table#transactionsdiv tr:nth-child(even) {
 }
 table#transactionsdiv tr:nth-child(odd) {
    background-color: rgba(255,255,255,0.2);
+/*promotional page styling start*/
+#headerMoving {
+  background: black;
+  color: white;
+}
+
+.nav-content {
+  color: white;
+}
+
+.slogan {
+  margin-bottom: 0.3em;
+  padding: 20px;
+}
+
+.interface {
+  margin-top: 30px;
+  width: 80vw;
+  height: auto;
+  border:1px solid black;
+}
+
+#header {
+  height: 130vh;
+  background: white;
+}
+
+.content {
+  padding-top: 80px;
+  color: white;
+  text-align: center;
+}
+
+#footer {
+  width: 100%;
+  height: 84px;
+  background: black;
+  opacity: 0.8;
+  text-align: center;
+}
+
 
