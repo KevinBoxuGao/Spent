@@ -1,0 +1,38 @@
+.add-task button {
+  position: relative;
+  left: 24px;
+  top: 35px;
+}
+
+.add-task button .fa-plus {
+  color: #1400FF;
+  font-size: 24px;
+  margin-right: 16px;
+  display: inline;
+}
+
+.add-task button h2 {
+  color: #1400FF;
+  display: inline;
+}
+
+.accessibility button {
+  color: white;
+  background: #1D69C4;
+  height: 36px;
+  font-size: 24px;
+  margin: 0px 8px;
+}
+
+.accessibility button i {
+  padding: 6px 10px;
+}
+
+.accessibility button:hover {
+  background: white;
+  box-shadow: 0 0 0 2px white;
+}
+
+.accessibility button:hover i {
+  color: #1D69C4;
+}

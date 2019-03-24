@@ -1,0 +1,39 @@
+@import "../abstracts/variables";
+.add-task {
+    button {
+        position: relative;
+        left: 24px;
+        top: 35px;
+        .fa-plus{
+            color: $primary-color;
+            font-size: 24px;
+            margin-right: 16px;
+            display: inline;
+        }
+        h2 {
+            color: $primary-color;
+            display: inline;
+        }
+    }
+}
+
+.accessibility {
+    button {
+        color: white;
+        background: $hover-secondary;
+        height: 36px;
+        font-size: 24px;
+        margin: 0px 8px;
+        i {
+            padding: 6px 10px;
+        }
+        &:hover {
+            background: white;
+            box-shadow: 0 0 0 2px rgba(255,255,255,1);
+            i {
+                color: $hover-secondary;
+            }
+        }
+    }
+
+}
