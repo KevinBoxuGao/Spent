@@ -110,17 +110,21 @@ def addexpense():
     data = query_database(claims['sub'])
 
     if len(data) == 0:
-        return "Unregistered", 99999999999
-    else:
-        data = data[0]
-        acData = Account(
-            parent=ndb.Key(Account, claims['sub']),
-            expenses=data['expenses']+[json['expense1'].replace('$', ''), json['expense2'], str(time.time())])
+        return "Unregistered", 401
+    try:
+        val = int(str(json['expense1']).replace('$', ''))
+    except:
+        return 'Bad Value', 401
 
-        # Some providers do not provide one of these so either can be used.
-        acData.email = claims.get('name', claims.get('email', 'Unknown'))
+    data = data[0]
+    acData = Account(
+        parent=ndb.Key(Account, claims['sub']),
+        expenses=data['expenses']+[str(val), json['expense2'], str(time.time())])
 
-        acData.put()
+    # Some providers do not provide one of these so either can be used.
+    acData.email = claims.get('name', claims.get('email', 'Unknown'))
+
+    acData.put()
     return 'OK', 200
 
 @app.route('/register', methods=['POST', 'PUT'])
