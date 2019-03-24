@@ -1,2 +1,2 @@
 # MasseyHacks2019SJAMCrew
-Our MasseyHacks V project - a business workflow app that visualizes projects as a tree
+Our MasseyHacks V project - an expenses-tracking app that aids with money-saving.
