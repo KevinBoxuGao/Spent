@@ -1,65 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+
+
+  <head>
+    <title>Spent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Extend</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    
+    <link href="css/main.css" rel="stylesheet">
 
-
-</head>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="js/main.js"></script>
+  </head>
 
 <body>
+<center>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Logo and responsive toggle -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                	<span class="glyphicon glyphicon-fire"></span> 
-                	Extend
-                </a>
+
+<div id="logged-out">
+	<div class="header" id="headerMoving" style="opacity:0.8;text-align:left;max-width:100%">
+		<div style="padding-top:5px;padding-bottom:5px;">
+  		<h4 class = "nav-content" style="letter-spacing:1px;float:left;padding:15px;margin:0;">Spent</h4>
+  		<h4 class = "nav-content" style="letter-spacing:1px;float:right;padding:15px;margin:0;cursor: default;" alt="loginS" id="loginS">Sign In</h4>
+      <div style="clear:both"></div>
+    </div>
+</div>
+
+
+<div id="fader" style="z-index:2;"></div>
+  <div id="loginbox" style="z-index:3;">
+  	<div id="ldiv" style="z-index:4;">
+    	<div id="firebaseui-auth-container" style="padding-top:50px;"></div>
+		  <h4 style="text-align:center;cursor: default;padding:20px;" alt="loginH" id="loginH" align="center">Cancel</h4>
+	  </div>
+  </div>
+
+
+<div id="header">
+  <div class="content">
+    <h1 class="slogan" style="padding:20px">Getting Yourself On Track</h1>
+    <h3 class="description" style="padding-bottom:15px">Empowering you to invest in the things are important in your life</h3>
+    <button class="continue"></button>
+    <img class="interface" src="imgs/demo.png"></img>
+  </div>
+</div>
+
+<div id="footer">
+  <p class="credits">Made By The SJAM Hacking Crew</p>
+</div>
+</div>
+
+<div id="logged-in">
+	<div class="header" id="headerMoving" style="position:fixed;opacity:0.8;text-align:left;max-width:100%">
+		<div style="padding-top:5px;padding-bottom:5px;">
+  		<h4 style="letter-spacing:1px;float:left;padding:15px;margin:0;">Spent</h4>
+		<div style="width:15px;float:left;margin:0;"><h4></h4></div>
+		<div>
+		<h4 style="letter-spacing:1px;float:right;padding:15px;margin:0;cursor: default;" id="sign-out">Sign Out</h4>
+		<h4 style="letter-spacing:1px;float:right;padding:15px;margin:0;cursor: default;" id="user"></h4>
+		</div>
+ 		<div style="clear:both"></div>
+		</div>
+
+	</div>
+<!-- #009688 -->
+<div class="container" style="background:#f7f7f7">
+<div style="height:100px"></div>
+<h1 style="padding:40px;color:#009688">My Dashboard</h1>
+<div style="max-width:50%">
+
+	 <div id="form">
+	    <form action="" method="post">
+	      <div class="form-group" style="max-width:540px">
+		<div style="float:left"><h4>Transaction Amount:</h4><input id="Amount"></input></div>
+		<div style="float:right"><h4>Transaction Details:</h4><input id="Details"></input></div>
+<div style="clear:both"></div>
+	      </div>
+	      <div class="form-group" style="padding-bottom:20px;">
+		<h4 id="add-note" class="lbox" style="max-width:200px;cursor: default;">Add Transaction</h4>
+	      </div>
+	    </form>
+	  </div>
+</div>
+</div>
+<div style="max-width:45%">
+      <div id="transactions" style="float:left">
+	<h2 style="color:#009688">Transaction List:</h2>
+        <table id="transactionsdiv">
+        </table>
+      </div>
+<div id="total" style="float:right;padding-top:40px">
+	<h2 style="color:#009688">Total Spendings:</h2>
+        <div class="amount-change" id='amountmenu' style="padding-bottom:10px;">
+          <h2 id="l24h" style="display:inline;padding-right:8px;">Last 24 Hours:</h2>
+          <h2 id="l7d" style="display:inline;padding-right:8px;">Last 7 Days:</h2>
+          <h2 id="l30d" style="display:inline;padding-right:8px;">Last 30 Days:</h2>
+          <h2 id="lallt" style="display:inline;padding-right:8px;">All Time:</h2>
+          <div class="dropdown">
+            <button onclick="expand()"><i class="fas fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <a id="24h">Last 24 Hours</a>
+              <a id="7d">Last 7 Days</a>
+              <a id="30d">Last 30 Days</a>
+              <a id="allt">All Time</a>
             </div>
-<div class="clearfix">
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">Extend View</a>
-                    </li>
-                    <li>
-                        <a href="#">Settings</a>                    
-                </ul>
-             </div>
-
-				<!-- Search -->
-				<form class="navbar-form navbar-right">
-<ul class="nav navbar-nav">
-                    <li>
-                        <a href="#" style="text-align:right">template@extend.com</a>
-		    </li> 
-                    <li>
-                        <a href="#" style="text-align:right">Sign Out</a>
-		    </li> 
-</ul>
-				</form>
-
-</div>  
-            <!-- /.navbar-collapse -->
+          </div>
         </div>
-        <!-- /.container -->
-    </nav>
-</body>
+        <h3 id="amount-total24h"></h1>
+        <h3 id="amount-total7d"></h1>
+        <h3 id="amount-total30d"></h1>
+        <h3 id="amount-totalallt"></h1>
+      </div>
+<div style="clear:both"></div>
+    </div>
+</div>
+</div>
+</center>
+  </body>
+<script>
+loginShow = document.getElementById('loginS');
+loginHide = document.getElementById('loginH');
+fade = document.getElementById('fader');
+loginBox = document.getElementById('loginbox');
+loginShow.onclick=function(){
+   fade.style.display = "block";
+   loginBox.style.display = "block";}
+loginHide.onclick=function(){
+   fade.style.display = "none";
+   loginBox.style.display = "none";}
+function fadein(){
+    jQuery("#headerMoving").fadeIn();
+};
+function fadeout(){
+    jQuery("#headerMoving").fadeOut();
+};
+window.onscroll = function() {moveHeader()};
+function moveHeader() {
+  if (window.pageYOffset > -1) {
+    fadein()
+  } else {
+    fadeout()
+  }
+}
 
+var expanded = 0;
+
+function expand() {
+    expanded = (expanded+1)%2
+    $(".dropdown-content").toggleClass("expand").delay(10000)
+}
+
+
+$(document).click(function(event) { 
+  $target = $(event.target);
+  if(!$target.closest('#amountmenu').length && expanded == 1) {
+    expand();
+  }        
+});
+
+  $('#amount-total24h').show();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').show();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').hide();
+var tfh = $('#24h');
+tfh.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').show();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').show();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').hide();
+    expand();
+});
+
+var sd = $('#7d');
+sd.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').show();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').hide();
+  $('#l7d').show();
+  $('#l30d').hide();
+  $('#lallt').hide();
+    expand();
+});
+
+var td = $('#30d');
+td.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').show();
+  $('#amount-totalallt').hide();
+  $('#l24h').hide();
+  $('#l7d').hide();
+  $('#l30d').show();
+  $('#lallt').hide();
+    expand();
+});
+
+var alt = $('#allt');
+alt.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').show();
+  $('#l24h').hide();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').show();
+    expand();
+});
+
+</script>
 </html>
