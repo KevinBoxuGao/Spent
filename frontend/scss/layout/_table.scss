@@ -1,0 +1,19 @@
+@import '../abstracts/variables';
+
+table {
+    border-radius: 4px;
+    thead {
+        tr:nth-child(even) {
+            background-color: $secondary-color;
+            td {
+                font-size: ;
+            }
+        }
+        tr:nth-child(odd) {
+            background-color: white;
+            td {
+
+            }
+        }
+    }
+}
