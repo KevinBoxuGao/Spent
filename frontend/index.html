@@ -16,10 +16,14 @@
 <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.js"></script>
 <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/1.0/firebase-ui-auth.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <script src="js/main.js"></script>
   </head>
 
 <body>
+<center>
+
+
 <div id="logged-out">
 	<div class="header" id="headerMoving" style="position:fixed;opacity:0.8;text-align:left;max-width:100%">
 		<div style="padding-top:5px;padding-bottom:5px;">
@@ -29,6 +33,7 @@
 		</div>
 
 	</div>
+<h1 style="padding-top:100px">Welcome to Spent</h1>
 	<div id="fader" style="z-index:2;"></div>
 	<div id="loginbox" style="z-index:3;">
 		<div id="ldiv" style="z-index:4;">
@@ -44,6 +49,7 @@
 		<div style="width:15px;float:left;margin:0;"><h4></h4></div>
 		<div>
 		<h4 style="letter-spacing:1px;float:right;padding:15px;margin:0;cursor: default;" id="sign-out">Sign Out</h4>
+		<h4 style="letter-spacing:1px;float:right;padding:15px;margin:0;cursor: default;" id="user"></h4>
 		<div class="lbox" style="float:right;max-height:50px">
 		</div>
 		</div>
@@ -52,34 +58,53 @@
 
 	</div>
 
-    <div class="container">
-      <div id="total">
-        <h2 class="saying">You have Spent</h2>
-        <h1 id="amountspentday"></h1>
+<div class="container" style="background:#cdf8b2">
+<div style="height:100px"></div>
+	<div id="total">
+	<h1>My Spendings:</h1>
+        <div class="amount-change">
+          <h2 class="saying" id="l24h">Last 24 Hours:</h2>
+          <h2 class="saying" id="l7d">Last 7 Days:</h2>
+          <h2 class="saying" id="l30d">Last 30 Days:</h2>
+          <h2 class="saying" id="lallt">All Time:</h2>
+          <div class="dropdown">
+            <button onclick="expand()"><i class="fas fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <a id="24h">Last 24 Hours</a>
+              <a id="7d">Last 7 Days</a>
+              <a id="30d">Last 30 Days</a>
+              <a id="allt">All Time</a>
+            </div>
+          </div>
+        </div>
+        <h1 id="amount-total24h"></h1>
+        <h1 id="amount-total7d"></h1>
+        <h1 id="amount-total30d"></h1>
+        <h1 id="amount-totalallt"></h1>
       </div>
 
 	 <div id="form">
 	    <form action="" method="post">
-	      <div class="form-group">
-		<textarea id="Amount"></textarea>
-		<textarea id="Details"></textarea>
+	      <div class="form-group" style="max-width:540px">
+		<div style="float:left"><h4>Transaction Amount:</h4><input id="Amount"></input></div>
+		<div style="float:right"><h4>Transaction Details:</h4><input id="Details"></input></div>
+<div style="clear:both"></div>
 	      </div>
-	      <div class="form-group">
-		<button id="add-note">Add Transaction</button>
+	      <div class="form-group" style="padding-bottom:20px;">
+		<h4 id="add-note" class="lbox" style="max-width:200px;">Add Transaction</h4>
 	      </div>
 	    </form>
 	  </div>
+</div>
 
       <div id="transactions">
-        <table>
-
-<div id="transactionsdiv">
-
-</div>
+        <table id="transactionsdiv">
         </table>
       </div>
     </div>
-</div> 
+
+</div>
+</center>
   </body>
 <script>
 loginShow = document.getElementById('loginS');
@@ -106,5 +131,68 @@ function moveHeader() {
     fadeout()
   }
 }
+function expand() {
+    $(".dropdown-content").toggleClass("expand").delay(10000)
+}
+  $('#amount-total24h').show();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').show();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').hide();
+var tfh = $('#24h');
+tfh.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').show();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').show();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').hide();
+});
+
+var sd = $('#7d');
+sd.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').show();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').hide();
+  $('#l24h').hide();
+  $('#l7d').show();
+  $('#l30d').hide();
+  $('#lallt').hide();
+});
+
+var td = $('#30d');
+td.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').show();
+  $('#amount-totalallt').hide();
+  $('#l24h').hide();
+  $('#l7d').hide();
+  $('#l30d').show();
+  $('#lallt').hide();
+});
+
+var alt = $('#allt');
+alt.click(function(event) {
+  event.preventDefault();
+  $('#amount-total24h').hide();
+  $('#amount-total7d').hide();
+  $('#amount-total30d').hide();
+  $('#amount-totalallt').show();
+  $('#l24h').hide();
+  $('#l7d').hide();
+  $('#l30d').hide();
+  $('#lallt').show();
+});
+
 </script>
 </html>

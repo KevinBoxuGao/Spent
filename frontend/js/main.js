@@ -4,7 +4,7 @@ $(function(){
   // deploying the application to a live production environment, change to
   // https://backend-dot-<PROJECT_ID>.appspot.com as specified in the
   // backend's app.yaml file.
-  //var backendHostUrl = 'https://backend-dot-spent.appspot.com';
+  //var backendHostUrl = 'https://backend-dot-spentweb.appspot.com';
   var backendHostUrl = 'http://localhost:8081';
 
   // [START gae_python_firenotes_config]
@@ -91,8 +91,14 @@ $(function(){
     }).then(function(data){
       $('#transactionsdiv').empty();
       $('#transactionsdiv').append(data[1]);
-      $('#amountspentday').empty();
-      $('#amountspentday').append(data[0][0]);
+      $('#amount-total24h').empty();
+      $('#amount-total24h').append(data[0][0]);
+      $('#amount-total7d').empty();
+      $('#amount-total7d').append(data[0][1]);
+      $('#amount-total30d').empty();
+      $('#amount-total30d').append(data[0][2]);
+      $('#amount-totalallt').empty();
+      $('#amount-totalallt').append(data[0][3]);
     });
   }
 

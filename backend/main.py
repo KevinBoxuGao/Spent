@@ -35,6 +35,9 @@ def query_database(user_id):
 
     return acDataParsed
 
+def dollar(x):
+    return '$'+str(x)
+
 def stats(data):
     daily = 0
     weekly = 0
@@ -57,9 +60,10 @@ def stats(data):
             alltime += transaction[0]
         else:
             alltime += transaction[0]
-    return [daily, weekly, monthly, alltime]
+    return [dollar(daily), dollar(weekly), dollar(monthly), dollar(alltime)]
 
 def renderTransactions(data):
+    data.reverse()
     html = """<thead>
             <tr>
               <td class="date">Date</td>
@@ -68,7 +72,7 @@ def renderTransactions(data):
             </tr>
           </thead>\n\n"""
     for transaction in data:
-        html += '<thead><tr><td class="date">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])))+'</td>\n<td class="description">'+str(transaction[1])+'</td>\n<td class="amount">$'+str(transaction[0])+'</td></tr></thead>\n\n\n'
+        html += '<tr><td class="date">'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(float(transaction[2])))+'</td>\n<td class="description">'+str(transaction[1])+'</td>\n<td class="amount">$'+str(transaction[0])+'</td></tr>\n\n\n'
     return html
 
 @app.route('/accountdata', methods=['GET'])
@@ -88,7 +92,7 @@ def getdata():
     data2 = []
     for i in range(0, len(data), 3):
         data2.append([data[i], data[i+1], data[i+2]])
-    logging.exception([stats(data2), renderTransactions(data2)])    
+   
     return jsonify([stats(data2), renderTransactions(data2)])
 
 

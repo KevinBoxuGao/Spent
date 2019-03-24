@@ -12,7 +12,7 @@ handlers:
 
 env_variables:
   # Replace with your Firebase project ID.
-  FIREBASE_PROJECT_ID: 'myclubattendance'
+  FIREBASE_PROJECT_ID: 'spentweb'
 
 libraries:
 - name: ssl
