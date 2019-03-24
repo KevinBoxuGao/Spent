@@ -1,0 +1,28 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../scss/main.scss",
+		"../scss/abstracts/_variables.scss",
+		"../scss/abstracts/_functions.scss",
+		"../scss/abstracts/_mixins.scss",
+		"../scss/base/_base.scss",
+		"../scss/base/_fonts.scss",
+		"../scss/base/_typography.scss",
+		"../scss/base/_helpers.scss",
+		"../scss/pages/home.scss"
+	],
+	"sourcesContent": [
+		"// 1. Configuration and helpers\r\n@import 'abstracts/variables';\r\n@import 'abstracts/functions';\r\n@import 'abstracts/mixins';\r\n\r\n// 2. Base stuff \r\n@import 'base/base';\r\n@import 'base/fonts';\r\n@import 'base/typography';\r\n@import 'base/helpers';\r\n\r\n// 3. Components\r\n\r\n\r\n// 4. Layout-related sections\r\n\r\n\r\n// 6. Page-specific styles\r\n@import 'pages/home';\r\n\r\n// 7. Themes\r\n",
+		"//fonts\r\n$default-font: Lato, sans-serif !default;\r\n//Code font family\r\n\r\n$text-color: black;\r\n$theme-color: rgb(22, 163, 64);\r\n\r\n//colors\r\n$primary-color: rgb(92, 255, 127);\r\n$secondary-color: #cdf8b2;\r\n\r\n$title-font-size: 30px;\r\n$font-size: 15px;\r\n\r\n",
+		"",
+		"//spacing\r\n@mixin center {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n@mixin center-vertical {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n}\r\n\r\n@mixin center-horizontal {\r\n    position: absolute;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n}",
+		"* {\r\n\t  padding: 0;\r\n    margin: 0;\r\n    transition: 0.2s;\r\n}\r\n\r\nhtml, body {\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\nhtml {\r\n    scroll-behavior: smooth;\r\n}\r\n\r\nbutton {\r\n    background: none;\r\n    border: none;\r\n}\r\n",
+		"//@font-face \r\n\r\n\r\n",
+		"body {\r\n    font-weight: 400;\r\n    color: black;\r\n  }\r\n\r\np {\r\n    margin-bottom: 1.25em;\r\n}\r\n\r\nh1, h2, h3, h4, h5 {\r\n    font-weight: 400;\r\n    color: black;\r\n  }\r\n\r\nh1 {\r\n    font-size: 36px;\r\n  }\r\n  \r\nh2 {font-size: 24px;}\r\n\r\nh3 {font-size: 18px;}\r\n\r\nh4 {font-size: 1.563em;}\r\n\r\nh5 {font-size: 1.25em;}",
+		".hide-text {\r\n overflow: hidden;\r\n padding: 0; \r\n text-indent: 101%;\r\n white-space: nowrap;\r\n}\r\n/*\r\n* Hide element while making it readable for screen readers\r\n* Shamelessly borrowed from HTML5Boilerplate:\r\n* https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133\r\n*/\r\n.visually-hidden {\r\n border: 0;\r\n clip: rect(0 0 0 0);\r\n height: 1px;\r\n margin: -1px;\r\n overflow: hidden;\r\n padding: 0;\r\n position: absolute;\r\n width: 1px;\r\n}",
+		""
+	],
+	"names": [],
+	"mappings": ";AIAA,AAAA,CAAC,CAAC;EACC,OAAO,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,IAAI;CACnB;;;AAED,AAAA,IAAI,EAAE,IAAI,CAAC;EACP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;CACd;;;AAED,AAAA,IAAI,CAAC;EACD,eAAe,EAAE,MAAM;CAC1B;;;AAED,AAAA,MAAM,CAAC;EACH,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,IAAI;CACf;;;AElBD,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,GAAG;EAChB,KAAK,EAAE,KAAK;CACb;;;AAEH,AAAA,CAAC,CAAC;EACE,aAAa,EAAE,MAAM;CACxB;;;AAED,AAAA,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,CAAC;EACf,WAAW,EAAE,GAAG;EAChB,KAAK,EAAE,KAAK;CACb;;;AAEH,AAAA,EAAE,CAAC;EACC,SAAS,EAAE,IAAI;CAChB;;;AAEH,AAAA,EAAE,CAAC;EAAC,SAAS,EAAE,IAAI;CAAG;;;AAEtB,AAAA,EAAE,CAAC;EAAC,SAAS,EAAE,IAAI;CAAG;;;AAEtB,AAAA,EAAE,CAAC;EAAC,SAAS,EAAE,OAAO;CAAG;;;AAEzB,AAAA,EAAE,CAAC;EAAC,SAAS,EAAE,MAAM;CAAG;;;ACxBxB,AAAA,UAAU,CAAC;EACV,QAAQ,EAAE,MAAM;EAChB,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,MAAM;CACnB;;AACD;;;;EAIE;;AACF,AAAA,gBAAgB,CAAC;EAChB,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,aAAa;EACnB,MAAM,EAAE,GAAG;EACX,MAAM,EAAE,IAAI;EACZ,QAAQ,EAAE,MAAM;EAChB,OAAO,EAAE,CAAC;EACV,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,GAAG;CACV"
+}
