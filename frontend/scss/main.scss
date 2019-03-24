@@ -10,13 +10,12 @@
 @import 'base/helpers';
 
 // 3. Components
-@import 'components/button';
+@import 'components/dropdown';
 
 // 4. Layout-related sections
-@import 'layout/header';
+@import 'layout/total';
+@import 'layout/table';
 
 // 6. Page-specific styles
 @import 'pages/home';
 
-// 7. Themes
-@import 'themes/default'; 

@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </head>
 
   <body>
     <div class="container">
       <div id="total">
-        <h2 class="saying">You have Spent</h2>
-        <h1 class="amount">$468</h1>
+        <div class="amount-change">
+          <h2 class="saying">Your Day:</h2>
+          <div class="dropdown">
+            <button onclick="expand()"><i class="fas fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <a href="#">Last 24 Hours</a>
+              <a href="#">Last 7 Days</a>
+              <a href="#">Last 30 Days</a>
+              <a href="#">All Time</a>
+            </div>
+          </div>
+        </div>
+        <h1 class="amount-total">$468</h1>
       </div>
       <div id="transactions">
         <table>

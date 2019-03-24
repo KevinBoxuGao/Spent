@@ -1,0 +1,32 @@
+@import "../abstracts/mixins";
+
+
+.amount-change {
+    margin-top: 24px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+
+    .saying{
+        color: black;
+        padding-right: 8px;
+        font-size: 36px;
+        display: inline;
+    }
+
+    button{
+        i{
+            font-size: 30px;
+        }
+    }
+
+}
+
+.amount-total{
+    color: black;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+
